@@ -1,8 +1,13 @@
 <!DOCTYPE html>
+<!--This file shows on EVERY page of our website-->
 <html>
   <head>
+    
+    <!--The title of our website-->
     <title>Saasapp</title>
     <%= csrf_meta_tags %>
+    
+    <!--We copied and pasted a custom google font right here called Open Sans-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,19 +23,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to root_path, class: "navbar-brand" do%> <!-- The logo of our website -->
+           <!-- The logo of our website -->
+          <%= link_to root_path, class: "navbar-brand" do%>
             <i class= "fa fa-group"></i>
             DevMatch
           <% end %>
         </div>
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "About", about_path %></li> <!-- /about is a relative path -->
+            <!-- this link doesn't break our website if we change the url -->
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Contact Us",new_contact_path %></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
     
+    <!--This piece of code injects the html of the page the user is viewing -->
+    <!--from app/views-->
     <%= yield %>
   </body>
 </html>
